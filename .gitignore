@@ -1,0 +1,15 @@
+databases
+errors
+sessions
+uploads
+.git
+*.jsc
+*.pyc
+__pycache__/
+.DS_Store
+*/.DS_Store
+\.pythonhistory
+static/scss/\.sass-cache/
+cache/
+static/node_modules/
+static/dist/

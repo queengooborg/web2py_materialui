@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{=T.accepted_language or 'en'}}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="application-name" content="{{=request.application}}">
+		<title>{{=response.title or request.application}}</title>
+
+		{{include 'favicon.html'}}
+
+		<script src="{{=STATIC('js', 'modernizr-2.8.3.min.js')}}"></script>
+		{{include 'web2py_ajax.html'}}
+
+		<style>
+			body {
+				background: #111;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div class="w2p_flash">{{=response.flash or ''}}</div> -->
+		
+		<div id="root"></div>
+		<script>
+			window.development_build = {{="false" if config.get('app.production') else "true"}};
+		</script>
+
+		<script src="{{=STATIC('dist', 'index.js')}}"></script>
+
+		{{if response.google_analytics_id:}}
+			<script src="{{=STATIC('js', 'analytics.min.js')}}"></script>
+			<script type="text/javascript">
+				analytics.initialize({
+				'Google Analytics':{trackingId:'{{=response.google_analytics_id}}'}
+				});
+			</script>
+		{{pass}}
+	</body>
+</html>

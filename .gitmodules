@@ -1,0 +1,3 @@
+[submodule "submodules/web2py-simple-seo"]
+	path = submodules/web2py-simple-seo
+	url = https://github.com/GooborgStudios/web2py-simple-seo.git
